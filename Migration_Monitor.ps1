@@ -46,9 +46,10 @@ while ($true) {
             [PSCustomObject]@{
                 DisplayName     = $_.DisplayName
                 StatusDetail    = $_.StatusDetail
+                TotalMailboxSize = ($_.TotalMailboxSize -replace ' \(.*\)')
                 Progress        = Get-ProgressBar $_.PercentComplete
             }
-        } | Format-Table -Property DisplayName, StatusDetail, Progress -AutoSize
+        } | Format-Table -Property DisplayName, StatusDetail, TotalMailboxSize, Progress -AutoSize
     } else {
         Write-Host "==== Synced Mailboxes (95% and above) ====" -ForegroundColor Green
         Write-Host "No synced mailboxes found." -ForegroundColor DarkGray
@@ -63,9 +64,10 @@ while ($true) {
             [PSCustomObject]@{
                 DisplayName     = $_.DisplayName
                 StatusDetail    = $_.StatusDetail
+                TotalMailboxSize = ($_.TotalMailboxSize -replace ' \(.*\)')
                 Progress        = Get-ProgressBar $_.PercentComplete
             }
-        } | Format-Table -Property DisplayName, StatusDetail, Progress -AutoSize
+        } | Format-Table -Property DisplayName, StatusDetail, TotalMailboxSize, Progress -AutoSize
     } else {
         Write-Host "==== In Progress Mailboxes (Below 95%) ====" -ForegroundColor Yellow
         Write-Host "No mailboxes in progress." -ForegroundColor DarkGray
