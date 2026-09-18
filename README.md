@@ -4,6 +4,13 @@
 ## Description
 This repository contains a collection of scripts for Office 365, designed to enhance productivity and automate various tasks. They are free to use and can be utilized by anyone interested in improving their Office 365 experience.
 
+## Scripts
+
+| Script | Description |
+|--------|-------------|
+| [`New-M365TenantReport.ps1`](New-M365TenantReport.ps1) | Inventories a Microsoft 365 tenant (identity, security, licensing, mail, collaboration) into a multi-tab Excel workbook. See [README-TenantReport.md](README-TenantReport.md). |
+| [`Migration_Monitor.ps1`](Migration_Monitor.ps1) | Live-refreshing console progress bar for Exchange Online mailbox move requests. |
+
 ## Usage
 The scripts provided in this repository are intended for use with Office 365. Users are encouraged to review and understand each script before executing them on their Office 365 Tenant or Computers.
 
